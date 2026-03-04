@@ -6,7 +6,7 @@
 <meta property="og:description" content="环境变量(path) 一、问题来源  现象  在命令行输入 g++ --version，报错： 1&#x27;g++&#x27; 不是内部或外部命令，也不是可运行的程序  为什么  你装了一个程序（比如 MinGW），但它放在 C:\Toolkit\mingw64\bin\ 里，系统不知道去哪找它。  二、环境变量是什么  定义  环境变量是操作系统里的一组键值对，告诉系统去哪里找可执行文件、临">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2026-03-04T05:35:28.000Z">
-<meta property="article:modified_time" content="2026-03-04T05:46:27.883Z">
+<meta property="article:modified_time" content="2026-03-04T05:55:16.161Z">
 <meta property="article:author" content="Lnk">
 <meta property="article:tag" content="Windows">
 <meta name="twitter:card" content="summary"><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.woff2"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
@@ -21,7 +21,7 @@
   font-family: 'JetBrains Mono';
   src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
 }
-</style><meta name="page-config" content="{&quot;code_fold&quot;:null}"><script class="pjax-js">var config = {"root":"/","code_fold":15,"search":{"preload":false,"activeHolder":"键入以继续","blurHolder":"数据检索","noResult":"无 $0 相关数据"},"code":{"codeInfo":"$0 - $1 行","copy":"复制"}};
+</style><meta name="page-config" content="{&quot;code_fold&quot;:null}"><script class="pjax-js">var config = {"root":"/","code_fold":15,"search":{"preload":false,"activeHolder":"Enter here","blurHolder":"Search","noResult":"Data \"$0\" not found"},"code":{"codeInfo":"$0 - $1 lines","copy":"copy"}};
 var page_config = {
   code_fold: null
 };
@@ -62,7 +62,7 @@ if (window.localStorage.getItem('theme-mode') === 'dark')
 }</style><style>:root {
  --dark-background: url('/images/BK.PNG');
  --light-background: url('/images/BK.PNG');
- --theme-encrypt-confirm: '确认'
+ --theme-encrypt-confirm: 'confirm'
 }</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@11.12.2/dist/mermaid.esm.min.mjs';
 window.mermaid = mermaid;
 code.paintMermaid();
@@ -132,7 +132,7 @@ document.addEventListener("pjax:complete", reset);reset()})</script><!-- hexo in
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>Windows使用技巧</h1><div id="post-info"><span>文章发布时间: <div class="control"><time datetime="2026-03-04T05:35:28.000Z" id="date"> 2026-03-04</time></div></span><br><span>最后更新时间: <div class="control"><time datetime="2026-03-04T05:46:27.883Z" id="updated"> 2026-03-04</time></div></span></div></div><hr><div id="post-content"><h1 id="环境变量path"><a href="#环境变量path" class="headerlink" title="环境变量path"></a><a class="markdownIt-Anchor" href="#环境变量path"></a> 环境变量(path)</h1>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Search" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>Windows使用技巧</h1><div id="post-info"><span>First Post: <div class="control"><time datetime="2026-03-04T05:35:28.000Z" id="date"> 2026-03-04</time></div></span><br><span>Last Update: <div class="control"><time datetime="2026-03-04T05:55:16.161Z" id="updated"> 2026-03-04</time></div></span></div></div><hr><div id="post-content"><h1 id="环境变量path"><a href="#环境变量path" class="headerlink" title="环境变量path"></a><a class="markdownIt-Anchor" href="#环境变量path"></a> 环境变量(path)</h1>
 <p>一、问题来源</p>
 <ol>
 <li>现象</li>
@@ -198,7 +198,7 @@ document.addEventListener("pjax:complete", reset);reset()})</script><!-- hexo in
 · 需要用哪个时，临时加 PATH 或用完整路径<br />
 · 或者在 CMake 里指定编译器路径</p>
 <hr />
-<h1 id="windows-里的斜杠正斜杠反斜杠"><a href="#windows-里的斜杠正斜杠反斜杠" class="headerlink" title="windows-里的斜杠正斜杠反斜杠"></a><a class="markdownIt-Anchor" href="#windows-里的斜杠正斜杠反斜杠"></a> Windows 里的斜杠——正斜杠/反斜杠</h1>
+<h1 id="windows-里的斜杠"><a href="#windows-里的斜杠" class="headerlink" title="windows-里的斜杠"></a><a class="markdownIt-Anchor" href="#windows-里的斜杠"></a> Windows 里的斜杠</h1>
 <p>一、问题来源</p>
 <ol>
 <li>现象</li>
@@ -242,4 +242,135 @@ document.addEventListener("pjax:complete", reset);reset()})</script><!-- hexo in
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-built_in">CreateFile</span>(<span class="hljs-string">L&quot;C:\\Users\\34035\\file.txt&quot;</span>, ...);<br></code></pre></td></tr></table></figure>
 <p>Windows 底层 API 要求反斜杠，但在 C++ 里要写成双的。</p>
 <hr />
-<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2026/11/18/%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/">← 下一篇 网络通信</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2026/03/02/%E9%AB%98%E7%AD%89%E4%BB%A3%E6%95%B0/">高等代数 上一篇 →</a></div></div></div><details id="reward"><summary>打赏</summary><div><span>微信 | Wechat</span><br><img src="/images/WeChat.png"></div><div><span>支付宝 | Alipay</span><br><img src="/images/Alipay.png"></div></details><div id="comments"><div id="giscus"></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="回到顶部" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" onClick="tocControl.change()" title="文章目录"><span class="tocBtnIconBar"></span><span class="tocBtnIconBar"></span><span class="tocBtnIconBar"></span></a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="切换主题"></a><a onclick="BgmControl()"><svg id="bgm-control" viewBox="0 0 30 34" fill="#18d1ff" style="width: 24px; transition: transform .3s;margin-top: 4px"><path d="M25.998 23.422V11.29h3.999v12.132h-3.999zM19.497 6.234h4.001v22.243h-4.001V6.234zM12.998.867h4v32.978h-4V.867zm-6.5 5.367h4.001v22.243H6.498V6.234zm-6.5 5.056h4v12.132h-4V11.29z"></path></svg><audio id="bgm" src="/audio/bgm.mp3" autoplay loop crossorigin="anonymous"> </audio></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="/images/1.jpg" alt="Logo" style="margin:0;border-radius:0;"></a><h1 id="Dr"><a href="/">Lnk</a></h1><div id="description"><p></p></div><div id="social-links"><a class="social" target="_blank" rel="noopener" href="https://github.com/Lnkqwq"><i class="fab fa-github" alt="GitHub"></i></a><a class="social" href="3403583728@qq.com"><i class="fa fa-envelope" alt="E-Mail"></i></a></div></div><div id="aside-block"><div id="toc-div"><h1>目录</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8Fpath"><span class="toc-number">1.</span> <span class="toc-text"> 环境变量(path)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#windows-%E9%87%8C%E7%9A%84%E6%96%9C%E6%9D%A0%E6%AD%A3%E6%96%9C%E6%9D%A0%E5%8F%8D%E6%96%9C%E6%9D%A0"><span class="toc-number">2.</span> <span class="toc-text"> Windows 里的斜杠——正斜杠&#x2F;反斜杠</span></a></li></ol></div></div><footer><nobr>构建自 <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> 使用主题 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> 主题作者 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas></body></html>
+<h1 id="注册表"><a href="#注册表" class="headerlink" title="注册表"></a><a class="markdownIt-Anchor" href="#注册表"></a> 注册表</h1>
+<p>一、注册表是什么</p>
+<ol>
+<li>一句话定义</li>
+</ol>
+<p>Windows 的配置数据库——所有设置、选项、配置都藏在这里。</p>
+<ol start="2">
+<li>类比</li>
+</ol>
+<p>· 如果把电脑比作一个人，注册表就是他的大脑+记忆+习惯<br />
+· 系统启动时读它，装软件时写它，运行时随时查它<br />
+· 改错了，人就傻了</p>
+<ol start="3">
+<li>物理位置（知道就行，别去翻）</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">C:\Windows\System32\config\   ← 系统配置<br>C:\Users\你的用户名\NTUSER.DAT  ← 你的个人配置<br></code></pre></td></tr></table></figure>
+<hr />
+<p>二、为什么需要知道注册表</p>
+<ol>
+<li>软件卸载不干净</li>
+</ol>
+<p>· 现象：明明卸载了，重装时报“已安装”<br />
+· 原因：软件没了，但注册表里还留着它的信息<br />
+· 解决：去注册表里删对应键</p>
+<ol start="2">
+<li>开机启动项太多</li>
+</ol>
+<p>· 现象：电脑开机越来越慢<br />
+· 原因：很多软件把自己写进开机启动<br />
+· 解决：去注册表里删掉不想自启的</p>
+<ol start="3">
+<li>右键菜单太乱</li>
+</ol>
+<p>· 现象：装了一堆软件，右键菜单比命还长<br />
+· 原因：每个软件都往注册表里加自己的右键项<br />
+· 解决：去注册表里删掉不用的</p>
+<ol start="4">
+<li>文件关联错了</li>
+</ol>
+<p>· 现象：双击 .txt 文件，它用记事本打开，但你想用 VSCode<br />
+· 原因：注册表里记录了默认打开方式<br />
+· 解决：改注册表或右键“打开方式”</p>
+<ol start="5">
+<li>某些设置界面找不到</li>
+</ol>
+<p>· 现象：想改的东西在设置面板里没有<br />
+· 原因：微软藏起来了，但注册表里有开关<br />
+· 解决：去注册表里改（需要知道具体键值）</p>
+<hr />
+<p>三、注册表长什么样</p>
+<ol>
+<li>打开方式</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">regedit<br></code></pre></td></tr></table></figure>
+<p>（Win + R 输入 regedit 回车）</p>
+<ol start="2">
+<li>结构（树形，和文件管理器一样）</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">计算机<br>├── HKEY_CLASSES_ROOT (HKCR)<br>├── HKEY_CURRENT_USER (HKCU)<br>├── HKEY_LOCAL_MACHINE (HKLM)<br>├── HKEY_USERS (HKU)<br>└── HKEY_CURRENT_CONFIG (HKCC)<br></code></pre></td></tr></table></figure>
+<ol start="3">
+<li>五个根键的作用</li>
+</ol>
+<p>根键 缩写 存什么<br />
+HKEY_CLASSES_ROOT HKCR 文件类型、右键菜单、COM组件<br />
+HKEY_CURRENT_USER HKCU 当前用户的设置（主题、壁纸、软件配置）<br />
+HKEY_LOCAL_MACHINE HKLM 本机所有用户的设置（硬件、系统、全局软件）<br />
+HKEY_USERS HKU 所有用户的配置（一般不用管）<br />
+HKEY_CURRENT_CONFIG HKCC 当前硬件配置（一般不用管）</p>
+<ol start="4">
+<li>键和值</li>
+</ol>
+<p>· 键（Key）：左边那些文件夹，像 HKEY_CURRENT_USER\Software\Microsoft<br />
+· 值（Value）：右边那些，存具体数据<br />
+· 值类型：字符串、数字、二进制</p>
+<hr />
+<p>四、日常会碰到的几个位置</p>
+<ol>
+<li>开机启动项</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run<br>HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run<br></code></pre></td></tr></table></figure>
+<p>右边列出来的，就是开机会自动启动的程序。</p>
+<ol start="2">
+<li>右键菜单（文件）</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">HKEY_CLASSES_ROOT\*\shell<br>HKEY_CLASSES_ROOT\*\shellex<br></code></pre></td></tr></table></figure>
+<p>每个子键对应一个右键菜单项。</p>
+<ol start="3">
+<li>右键菜单（文件夹）</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">HKEY_CLASSES_ROOT\Directory\shell<br>HKEY_CLASSES_ROOT\Directory\shellex<br></code></pre></td></tr></table></figure>
+<ol start="4">
+<li>软件卸载信息</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall<br></code></pre></td></tr></table></figure>
+<p>控制面板的“卸载程序”列表，就是从这里读的。</p>
+<ol start="5">
+<li>环境变量（没错，PATH 也在这）</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment<br>HKEY_CURRENT_USER\Environment<br></code></pre></td></tr></table></figure>
+<hr />
+<p>五、操作注册表（必读：先备份！）</p>
+<ol>
+<li>导出备份（改之前一定要做）</li>
+</ol>
+<p>· 选中要改的键 → 文件 → 导出<br />
+· 存成 .reg 文件<br />
+· 万一改坏了，双击这个文件就能恢复</p>
+<ol start="2">
+<li>查找</li>
+</ol>
+<p>按 Ctrl+F，输入关键词。但自带的搜索很慢，推荐用 RegScanner（第三方工具）。</p>
+<ol start="3">
+<li>修改</li>
+</ol>
+<p>· 右键 → 新建 → 字符串值 / DWORD值 / 等<br />
+· 双击改数值</p>
+<ol start="4">
+<li>删除</li>
+</ol>
+<p>右键 → 删除（不可恢复，除非有备份）</p>
+<hr />
+<p>六、命令行操作（不用开窗口）</p>
+<p>查询</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">reg query <span class="hljs-string">&quot;HKCU\Software\Microsoft\Windows\CurrentVersion\Run&quot;</span><br></code></pre></td></tr></table></figure>
+<p>添加</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">reg add <span class="hljs-string">&quot;HKCU\Software\MyApp&quot;</span> /v Version /t REG_SZ /d <span class="hljs-string">&quot;1.0&quot;</span> /f<br></code></pre></td></tr></table></figure>
+<p>删除</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">reg delete <span class="hljs-string">&quot;HKCU\Software\MyApp&quot;</span> /f<br></code></pre></td></tr></table></figure>
+<p>导出/导入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">reg <span class="hljs-built_in">export</span> <span class="hljs-string">&quot;HKCU\Software\MyApp&quot;</span> backup.reg<br>reg import backup.reg<br></code></pre></td></tr></table></figure>
+<hr />
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2026/11/18/%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/">← Next 网络通信</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2026/03/02/%E9%AB%98%E7%AD%89%E4%BB%A3%E6%95%B0/">高等代数 Prev →</a></div></div></div><details id="reward"><summary>reward</summary><div><span>微信 | Wechat</span><br><img src="/images/WeChat.png"></div><div><span>支付宝 | Alipay</span><br><img src="/images/Alipay.png"></div></details><div id="comments"><div id="giscus"></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="To Top" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" onClick="tocControl.change()" title="To Catalog"><span class="tocBtnIconBar"></span><span class="tocBtnIconBar"></span><span class="tocBtnIconBar"></span></a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="Change Theme"></a><a onclick="BgmControl()"><svg id="bgm-control" viewBox="0 0 30 34" fill="#18d1ff" style="width: 24px; transition: transform .3s;margin-top: 4px"><path d="M25.998 23.422V11.29h3.999v12.132h-3.999zM19.497 6.234h4.001v22.243h-4.001V6.234zM12.998.867h4v32.978h-4V.867zm-6.5 5.367h4.001v22.243H6.498V6.234zm-6.5 5.056h4v12.132h-4V11.29z"></path></svg><audio id="bgm" src="/audio/bgm.mp3" autoplay loop crossorigin="anonymous"> </audio></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="/images/1.jpg" alt="Logo" style="margin:0;border-radius:0;"></a><h1 id="Dr"><a href="/">Lnk</a></h1><div id="description"><p></p></div><div id="social-links"><a class="social" target="_blank" rel="noopener" href="https://github.com/Lnkqwq"><i class="fab fa-github" alt="GitHub"></i></a><a class="social" href="3403583728@qq.com"><i class="fa fa-envelope" alt="E-Mail"></i></a></div></div><div id="aside-block"><div id="toc-div"><h1>Catalog</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8Fpath"><span class="toc-number">1.</span> <span class="toc-text"> 环境变量(path)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#windows-%E9%87%8C%E7%9A%84%E6%96%9C%E6%9D%A0"><span class="toc-number">2.</span> <span class="toc-text"> Windows 里的斜杠</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B3%A8%E5%86%8C%E8%A1%A8"><span class="toc-number">3.</span> <span class="toc-text"> 注册表</span></a></li></ol></div></div><footer><nobr>Published with <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> Theme <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> by <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas></body></html>
