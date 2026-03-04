@@ -1,0 +1,245 @@
+<!DOCTYPE html><html lang="en" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Windows使用技巧 | Hexo</title><meta name="keywords" content="Windows"><meta name="description" content="环境变量(path) 一、问题来源  现象  在命令行输入 g++ --version，报错： 1&#x27;g++&#x27; 不是内部或外部命令，也不是可运行的程序  为什么  你装了一个程序（比如 MinGW），但它放在 C:\Toolkit\mingw64\bin\ 里，系统不知道去哪找它。  二、环境变量是什么  定义  环境变量是操作系统里的一组键值对，告诉系统去哪里找可执行文件、临">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Windows使用技巧">
+<meta property="og:url" content="http://example.com/2026/03/04/Windows%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="环境变量(path) 一、问题来源  现象  在命令行输入 g++ --version，报错： 1&#x27;g++&#x27; 不是内部或外部命令，也不是可运行的程序  为什么  你装了一个程序（比如 MinGW），但它放在 C:\Toolkit\mingw64\bin\ 里，系统不知道去哪找它。  二、环境变量是什么  定义  环境变量是操作系统里的一组键值对，告诉系统去哪里找可执行文件、临">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-03-04T05:35:28.000Z">
+<meta property="article:modified_time" content="2026-03-04T05:46:27.883Z">
+<meta property="article:author" content="Lnk">
+<meta property="article:tag" content="Windows">
+<meta name="twitter:card" content="summary"><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.woff2"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><meta name="page-config" content="{&quot;code_fold&quot;:null}"><script class="pjax-js">var config = {"root":"/","code_fold":15,"search":{"preload":false,"activeHolder":"键入以继续","blurHolder":"数据检索","noResult":"无 $0 相关数据"},"code":{"codeInfo":"$0 - $1 行","copy":"复制"}};
+var page_config = {
+  code_fold: null
+};
+function updatePageConfig() {
+  var newPageConfig = document.querySelector('meta[name="page-config"]');
+  if (newPageConfig) {
+    page_config = JSON.parse(newPageConfig.content);
+  }
+}
+document.addEventListener('pjax:complete', function() { updatePageConfig(); });
+updatePageConfig();</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><script src="//unpkg.com/mermaid@11.12.2/dist/mermaid.min.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.1/MathJax.js"></script><script>MathJax.Hub.Config({
+ menuSettings: {
+   zoom: "None"
+ },
+ showMathMenu: false,
+ jax: ["input/TeX","output/CommonHTML"],
+ extensions: ["tex2jax.js"],
+ TeX: {
+   extensions: ["AMSmath.js","AMSsymbols.js"],
+   equationNumbers: {
+     autoNumber: "AMS"
+   }
+ },
+ tex2jax: {
+   inlineMath: [["\\(", "\\)"]],
+   displayMath: [["\\[", "\\]"]]
+ }
+});</script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark')
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+ --dark-background: url('/images/BK.PNG');
+ --light-background: url('/images/BK.PNG');
+ --theme-encrypt-confirm: '确认'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@11.12.2/dist/mermaid.esm.min.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.1/MathJax.js"></script><script>MathJax.Hub.Config({
+  menuSettings: {
+    zoom: "None"
+  },
+  showMathMenu: false,
+  jax: ["input/TeX","output/CommonHTML"],
+  extensions: ["tex2jax.js"],
+  TeX: {
+    extensions: ["AMSmath.js","AMSsymbols.js"],
+    equationNumbers: {
+      autoNumber: "AMS"
+    }
+  },
+  tex2jax: {
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]]
+  }
+});
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.vercount','meta[name=page-config]'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><script class="pjax-js">reset= () => {window.giscusSettings = {
+ repo: 'Lnkqwq/Lnkqwq.github.io',
+ repoId: 'R_kgDORZSSAA',
+ category: '',
+ categoryId: '',
+ mapping: 'pathname',
+ strict: '0',
+ reactionsEnabled: '1',
+ emitMetadata: '0',
+ inputPosition: 'bottom',
+ lang: 'zh-CN',
+ crossorigin: 'anonymous' , loading: 'lazy'};window.giscusThemeConfig = { theme: 'preferred_color_scheme' };MathJax.Hub.Queue(["Typeset", MathJax.Hub]);document.querySelector('.lg-container')?.remove()
+const postBg = document.querySelector('#post-bg');
+if (postBg) lightGallery(postBg, {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.vercount','meta[name=page-config]'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>Windows使用技巧</h1><div id="post-info"><span>文章发布时间: <div class="control"><time datetime="2026-03-04T05:35:28.000Z" id="date"> 2026-03-04</time></div></span><br><span>最后更新时间: <div class="control"><time datetime="2026-03-04T05:46:27.883Z" id="updated"> 2026-03-04</time></div></span></div></div><hr><div id="post-content"><h1 id="环境变量path"><a href="#环境变量path" class="headerlink" title="环境变量path"></a><a class="markdownIt-Anchor" href="#环境变量path"></a> 环境变量(path)</h1>
+<p>一、问题来源</p>
+<ol>
+<li>现象</li>
+</ol>
+<p>在命令行输入 g++ --version，报错：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&#x27;g++&#x27; 不是内部或外部命令，也不是可运行的程序<br></code></pre></td></tr></table></figure>
+<ol start="2">
+<li>为什么</li>
+</ol>
+<p>你装了一个程序（比如 MinGW），但它放在 C:\Toolkit\mingw64\bin\ 里，系统不知道去哪找它。</p>
+<hr />
+<p>二、环境变量是什么</p>
+<ol>
+<li>定义</li>
+</ol>
+<p>环境变量是操作系统里的一组键值对，告诉系统去哪里找可执行文件、临时文件夹位置等信息。</p>
+<ol start="2">
+<li>最重要的那个：PATH</li>
+</ol>
+<p>PATH 是一个列表，里面放着一堆文件夹路径。当你在命令行输入一个命令（比如 g++），系统会按顺序去这些文件夹里找有没有叫 g++.exe 的文件。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">PATH = C:\Windows\system32; C:\Toolkit\mingw64\bin; C:\Program Files\CMake\bin<br>          ↑                    ↑                         ↑<br>     系统自己的工具       你装的 MinGW                你装的 CMake<br></code></pre></td></tr></table></figure>
+<ol start="3">
+<li>查看当前 PATH</li>
+</ol>
+<p>命令行里输入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">echo</span> %PATH%        <span class="hljs-comment"># cmd 用</span><br><span class="hljs-variable">$env</span>:Path          <span class="hljs-comment"># PowerShell 用</span><br></code></pre></td></tr></table></figure>
+<p>会看到一长串用分号隔开的路径。</p>
+<hr />
+<p>三、解决方法</p>
+<p>方法A：永久添加（推荐）</p>
+<ol>
+<li>找到路径<br />
+复制你的工具所在的 bin 文件夹路径，比如：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">C:\Toolkit\mingw64\bin<br></code></pre></td></tr></table></figure>
+</li>
+<li>打开环境变量设置<br />
+· 此电脑 → 右键属性 → 高级系统设置<br />
+· 点“环境变量”按钮</li>
+<li>编辑 PATH<br />
+· 在“系统变量”里找到 Path，双击编辑<br />
+· 点“新建”，粘贴你的路径<br />
+· 点“确定”保存所有窗口</li>
+<li>重启命令行<br />
+必须关掉所有命令行窗口再重开，新加的路径才会生效。</li>
+<li>验证<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">g++ --version<br></code></pre></td></tr></table></figure>
+如果显示版本信息，说明成功了。</li>
+</ol>
+<p>方法B：临时添加（测试用）</p>
+<p>如果你只是临时想用一次，不想改系统设置：</p>
+<p>cmd 里：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">set</span> PATH=C:\Toolkit\mingw64\bin;%PATH%<br></code></pre></td></tr></table></figure>
+<p>PowerShell 里：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-variable">$env:Path</span> = <span class="hljs-string">&quot;C:\Toolkit\mingw64\bin;&quot;</span> + <span class="hljs-variable">$env:Path</span><br></code></pre></td></tr></table></figure>
+<p>缺点：只对当前窗口有效，关了再开就没了。</p>
+<p>方法C：直接输完整路径（最原始）</p>
+<p>每次都用完整路径调用：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">C:\Toolkit\mingw64\bin\g++.exe --version<br></code></pre></td></tr></table></figure>
+<p>缺点：太长了，没人愿意这么干。</p>
+<hr />
+<p>四、进阶：多个版本的同一工具</p>
+<p>如果你装了 MinGW 和 LLVM 两个编译器，PATH 里只能有一个生效——系统按顺序找，找到第一个就不往下找了。</p>
+<p>解决方法：</p>
+<p>· 不把两个都加到 PATH<br />
+· 需要用哪个时，临时加 PATH 或用完整路径<br />
+· 或者在 CMake 里指定编译器路径</p>
+<hr />
+<h1 id="windows-里的斜杠正斜杠反斜杠"><a href="#windows-里的斜杠正斜杠反斜杠" class="headerlink" title="windows-里的斜杠正斜杠反斜杠"></a><a class="markdownIt-Anchor" href="#windows-里的斜杠正斜杠反斜杠"></a> Windows 里的斜杠——正斜杠/反斜杠</h1>
+<p>一、问题来源</p>
+<ol>
+<li>现象</li>
+</ol>
+<p>你在不同的地方看到这些写法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">C:\Users\name\file.txt    ← 文件资源管理器里<br>C:/Users/name/file.txt     ← 有些代码里<br>C:\\Users\\name\\file.txt  ← C++字符串里<br>../../file.txt             ← 相对路径里<br></code></pre></td></tr></table></figure>
+<p>到底哪个是对的？为什么同一个路径要写成不同样子？</p>
+<ol start="2">
+<li>历史原因</li>
+</ol>
+<p>· Windows：从 DOS 时代继承，用反斜杠 \ 分隔文件夹<br />
+· Unix/Linux：用正斜杠 / 分隔<br />
+· Web：URL 里用正斜杠<br />
+<a href="https://example.com/">https://example.com/</a></p>
+<p>你现在 straddle 在三个世界之间，所以乱。</p>
+<hr />
+<p>二、各场景应该用什么</p>
+<p>场景1：文件资源管理器地址栏</p>
+<p>用反斜杠 \</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">C:\Users\34035\Graphics<br></code></pre></td></tr></table></figure>
+<p>这是 Windows 亲儿子，只能用 \。</p>
+<p>场景2：命令行（cmd/PowerShell）</p>
+<p>两种都行，但建议用反斜杠</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> C:\Users\34035\Graphics<br><span class="hljs-built_in">cd</span> C:/Users/34035/Graphics   <span class="hljs-comment"># 也行</span><br></code></pre></td></tr></table></figure>
+<p>cmd 和 PowerShell 都兼容正斜杠，但传统习惯用反斜杠。</p>
+<p>场景3：C/C++ 代码里的字符串</p>
+<p>必须用双反斜杠 \ 或正斜杠 /</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">// 错误：\U 被解释成 Unicode 转义</span><br><span class="hljs-type">const</span> <span class="hljs-type">char</span>* path = <span class="hljs-string">&quot;C:\Users\34035\file.txt&quot;</span>;<br><br><span class="hljs-comment">// 正确：双反斜杠</span><br><span class="hljs-type">const</span> <span class="hljs-type">char</span>* path = <span class="hljs-string">&quot;C:\\Users\\34035\\file.txt&quot;</span>;<br><br><span class="hljs-comment">// 正确：正斜杠（推荐）</span><br><span class="hljs-type">const</span> <span class="hljs-type">char</span>* path = <span class="hljs-string">&quot;C:/Users/34035/file.txt&quot;</span>;<br></code></pre></td></tr></table></figure>
+<p>为什么：C++ 里反斜杠 \ 是转义符的开始，比如 \n 是换行。所以要表示真正的反斜杠，得写两个 \。</p>
+<p>场景4：CMakeLists.txt 和 JSON 文件</p>
+<p>用正斜杠 /</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmake"><span class="hljs-keyword">set</span>(CMAKE_CXX_COMPILER <span class="hljs-string">&quot;C:/Toolkit/mingw64/bin/g++.exe&quot;</span>)<br></code></pre></td></tr></table></figure>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-attr">&quot;compilerPath&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;C:/Toolkit/mingw64/bin/g++.exe&quot;</span><br></code></pre></td></tr></table></figure>
+<p>这些文件里反斜杠容易出问题，用正斜杠最安全。</p>
+<p>场景5：相对路径</p>
+<p>用正斜杠 /</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-built_in">loadOBJ</span>(<span class="hljs-string">&quot;../../3D_ply/bunny.obj&quot;</span>, vertices, indices);<br></code></pre></td></tr></table></figure>
+<p>相对路径里的 … 是语法，分隔符用 / 更清晰，各平台都认。</p>
+<p>场景6：Windows API</p>
+<p>必须用双反斜杠 \</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-built_in">CreateFile</span>(<span class="hljs-string">L&quot;C:\\Users\\34035\\file.txt&quot;</span>, ...);<br></code></pre></td></tr></table></figure>
+<p>Windows 底层 API 要求反斜杠，但在 C++ 里要写成双的。</p>
+<hr />
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2026/11/18/%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/">← 下一篇 网络通信</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2026/03/02/%E9%AB%98%E7%AD%89%E4%BB%A3%E6%95%B0/">高等代数 上一篇 →</a></div></div></div><details id="reward"><summary>打赏</summary><div><span>微信 | Wechat</span><br><img src="/images/WeChat.png"></div><div><span>支付宝 | Alipay</span><br><img src="/images/Alipay.png"></div></details><div id="comments"><div id="giscus"></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="回到顶部" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" onClick="tocControl.change()" title="文章目录"><span class="tocBtnIconBar"></span><span class="tocBtnIconBar"></span><span class="tocBtnIconBar"></span></a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="切换主题"></a><a onclick="BgmControl()"><svg id="bgm-control" viewBox="0 0 30 34" fill="#18d1ff" style="width: 24px; transition: transform .3s;margin-top: 4px"><path d="M25.998 23.422V11.29h3.999v12.132h-3.999zM19.497 6.234h4.001v22.243h-4.001V6.234zM12.998.867h4v32.978h-4V.867zm-6.5 5.367h4.001v22.243H6.498V6.234zm-6.5 5.056h4v12.132h-4V11.29z"></path></svg><audio id="bgm" src="/audio/bgm.mp3" autoplay loop crossorigin="anonymous"> </audio></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="/images/1.jpg" alt="Logo" style="margin:0;border-radius:0;"></a><h1 id="Dr"><a href="/">Lnk</a></h1><div id="description"><p></p></div><div id="social-links"><a class="social" target="_blank" rel="noopener" href="https://github.com/Lnkqwq"><i class="fab fa-github" alt="GitHub"></i></a><a class="social" href="3403583728@qq.com"><i class="fa fa-envelope" alt="E-Mail"></i></a></div></div><div id="aside-block"><div id="toc-div"><h1>目录</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8Fpath"><span class="toc-number">1.</span> <span class="toc-text"> 环境变量(path)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#windows-%E9%87%8C%E7%9A%84%E6%96%9C%E6%9D%A0%E6%AD%A3%E6%96%9C%E6%9D%A0%E5%8F%8D%E6%96%9C%E6%9D%A0"><span class="toc-number">2.</span> <span class="toc-text"> Windows 里的斜杠——正斜杠&#x2F;反斜杠</span></a></li></ol></div></div><footer><nobr>构建自 <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> 使用主题 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> 主题作者 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas></body></html>
