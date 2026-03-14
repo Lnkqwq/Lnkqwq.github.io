@@ -1,0 +1,696 @@
+<!DOCTYPE html><html lang="en" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Windows使用技巧 | Hexo</title><meta name="keywords" content="Windows"><meta name="description" content="环境变量(path) 一、问题来源  现象  在命令行输入 g++ --version，报错： 1&#x27;g++&#x27; 不是内部或外部命令，也不是可运行的程序  为什么  你装了一个程序（比如 MinGW），但它放在 C:\Toolkit\mingw64\bin\ 里，系统不知道去哪找它。  二、环境变量是什么  定义  环境变量是操作系统里的一组键值对，告诉系统去哪里找可执行文件、临">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Windows使用技巧">
+<meta property="og:url" content="http://example.com/2026/03/04/Windows%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="环境变量(path) 一、问题来源  现象  在命令行输入 g++ --version，报错： 1&#x27;g++&#x27; 不是内部或外部命令，也不是可运行的程序  为什么  你装了一个程序（比如 MinGW），但它放在 C:\Toolkit\mingw64\bin\ 里，系统不知道去哪找它。  二、环境变量是什么  定义  环境变量是操作系统里的一组键值对，告诉系统去哪里找可执行文件、临">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-03-04T05:35:28.000Z">
+<meta property="article:modified_time" content="2026-03-14T04:15:56.638Z">
+<meta property="article:author" content="Lnk">
+<meta property="article:tag" content="Windows">
+<meta name="twitter:card" content="summary"><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.woff2"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><meta name="page-config" content="{&quot;code_fold&quot;:null}"><script class="pjax-js">var config = {"root":"/","code_fold":-1,"search":{"preload":false,"activeHolder":"Enter here","blurHolder":"Search","noResult":"Data \"$0\" not found"},"code":{"codeInfo":"$0 - $1 lines","copy":"copy"}};
+var page_config = {
+  code_fold: null
+};
+function updatePageConfig() {
+  var newPageConfig = document.querySelector('meta[name="page-config"]');
+  if (newPageConfig) {
+    page_config = JSON.parse(newPageConfig.content);
+  }
+}
+document.addEventListener('pjax:complete', function() { updatePageConfig(); });
+updatePageConfig();</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><script src="//unpkg.com/mermaid@11.12.2/dist/mermaid.min.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.1/MathJax.js"></script><script>MathJax.Hub.Config({
+ menuSettings: {
+   zoom: "None"
+ },
+ showMathMenu: false,
+ jax: ["input/TeX","output/CommonHTML"],
+ extensions: ["tex2jax.js"],
+ TeX: {
+   extensions: ["AMSmath.js","AMSsymbols.js"],
+   equationNumbers: {
+     autoNumber: "AMS"
+   }
+ },
+ tex2jax: {
+   inlineMath: [["\\(", "\\)"]],
+   displayMath: [["\\[", "\\]"]]
+ }
+});</script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark')
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+ --dark-background: url('/images/BK.PNG');
+ --light-background: url('/images/BK.PNG');
+ --theme-encrypt-confirm: 'confirm'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@11.12.2/dist/mermaid.esm.min.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.1/MathJax.js"></script><script>MathJax.Hub.Config({
+  menuSettings: {
+    zoom: "None"
+  },
+  showMathMenu: false,
+  jax: ["input/TeX","output/CommonHTML"],
+  extensions: ["tex2jax.js"],
+  TeX: {
+    extensions: ["AMSmath.js","AMSsymbols.js"],
+    equationNumbers: {
+      autoNumber: "AMS"
+    }
+  },
+  tex2jax: {
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]]
+  }
+});
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.vercount','meta[name=page-config]'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><script class="pjax-js">reset= () => {window.giscusSettings = {
+ repo: 'Lnkqwq/Lnkqwq.github.io',
+ repoId: 'R_kgDORZSSAA',
+ category: '',
+ categoryId: '',
+ mapping: 'pathname',
+ strict: '0',
+ reactionsEnabled: '1',
+ emitMetadata: '0',
+ inputPosition: 'bottom',
+ lang: 'zh-CN',
+ crossorigin: 'anonymous' , loading: 'lazy'};window.giscusThemeConfig = { theme: 'preferred_color_scheme' };MathJax.Hub.Queue(["Typeset", MathJax.Hub]);document.querySelector('.lg-container')?.remove()
+const postBg = document.querySelector('#post-bg');
+if (postBg) lightGallery(postBg, {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.vercount','meta[name=page-config]'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Search" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>Windows使用技巧</h1><div id="post-info"><span>First Post: <div class="control"><time datetime="2026-03-04T05:35:28.000Z" id="date"> 2026-03-04</time></div></span><br><span>Last Update: <div class="control"><time datetime="2026-03-14T04:15:56.638Z" id="updated"> 2026-03-14</time></div></span></div></div><hr><div id="post-content"><h1 id="环境变量path"><a href="#环境变量path" class="headerlink" title="环境变量path"></a><a class="markdownIt-Anchor" href="#环境变量path"></a> 环境变量(path)</h1>
+<p>一、问题来源</p>
+<ol>
+<li>现象</li>
+</ol>
+<p>在命令行输入 g++ --version，报错：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&#x27;g++&#x27; 不是内部或外部命令，也不是可运行的程序<br></code></pre></td></tr></table></figure>
+<ol start="2">
+<li>为什么</li>
+</ol>
+<p>你装了一个程序（比如 MinGW），但它放在 C:\Toolkit\mingw64\bin\ 里，系统不知道去哪找它。</p>
+<hr />
+<p>二、环境变量是什么</p>
+<ol>
+<li>定义</li>
+</ol>
+<p>环境变量是操作系统里的一组键值对，告诉系统去哪里找可执行文件、临时文件夹位置等信息。</p>
+<ol start="2">
+<li>最重要的那个：PATH</li>
+</ol>
+<p>PATH 是一个列表，里面放着一堆文件夹路径。当你在命令行输入一个命令（比如 g++），系统会按顺序去这些文件夹里找有没有叫 g++.exe 的文件。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">PATH = C:\Windows\system32; C:\Toolkit\mingw64\bin; C:\Program Files\CMake\bin<br>          ↑                    ↑                         ↑<br>     系统自己的工具       你装的 MinGW                你装的 CMake<br></code></pre></td></tr></table></figure>
+<ol start="3">
+<li>查看当前 PATH</li>
+</ol>
+<p>命令行里输入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">echo</span> %PATH%        <span class="hljs-comment"># cmd 用</span><br><span class="hljs-variable">$env</span>:Path          <span class="hljs-comment"># PowerShell 用</span><br></code></pre></td></tr></table></figure>
+<p>会看到一长串用分号隔开的路径。</p>
+<hr />
+<p>三、解决方法</p>
+<p>方法A：永久添加（推荐）</p>
+<ol>
+<li>找到路径<br />
+复制你的工具所在的 bin 文件夹路径，比如：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">C:\Toolkit\mingw64\bin<br></code></pre></td></tr></table></figure>
+</li>
+<li>打开环境变量设置<br />
+· 此电脑 → 右键属性 → 高级系统设置<br />
+· 点“环境变量”按钮</li>
+<li>编辑 PATH<br />
+· 在“系统变量”里找到 Path，双击编辑<br />
+· 点“新建”，粘贴你的路径<br />
+· 点“确定”保存所有窗口</li>
+<li>重启命令行<br />
+必须关掉所有命令行窗口再重开，新加的路径才会生效。</li>
+<li>验证<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">g++ --version<br></code></pre></td></tr></table></figure>
+如果显示版本信息，说明成功了。</li>
+</ol>
+<p>方法B：临时添加（测试用）</p>
+<p>如果你只是临时想用一次，不想改系统设置：</p>
+<p>cmd 里：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">set</span> PATH=C:\Toolkit\mingw64\bin;%PATH%<br></code></pre></td></tr></table></figure>
+<p>PowerShell 里：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-variable">$env:Path</span> = <span class="hljs-string">&quot;C:\Toolkit\mingw64\bin;&quot;</span> + <span class="hljs-variable">$env:Path</span><br></code></pre></td></tr></table></figure>
+<p>缺点：只对当前窗口有效，关了再开就没了。</p>
+<p>方法C：直接输完整路径（最原始）</p>
+<p>每次都用完整路径调用：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">C:\Toolkit\mingw64\bin\g++.exe --version<br></code></pre></td></tr></table></figure>
+<p>缺点：太长了，没人愿意这么干。</p>
+<hr />
+<p>四、进阶：多个版本的同一工具</p>
+<p>如果你装了 MinGW 和 LLVM 两个编译器，PATH 里只能有一个生效——系统按顺序找，找到第一个就不往下找了。</p>
+<p>解决方法：</p>
+<p>· 不把两个都加到 PATH<br />
+· 需要用哪个时，临时加 PATH 或用完整路径<br />
+· 或者在 CMake 里指定编译器路径</p>
+<hr />
+<h1 id="windows-里的斜杠"><a href="#windows-里的斜杠" class="headerlink" title="windows-里的斜杠"></a><a class="markdownIt-Anchor" href="#windows-里的斜杠"></a> Windows 里的斜杠</h1>
+<p>一、问题来源</p>
+<ol>
+<li>现象</li>
+</ol>
+<p>你在不同的地方看到这些写法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">C:\Users\name\file.txt    ← 文件资源管理器里<br>C:/Users/name/file.txt     ← 有些代码里<br>C:\\Users\\name\\file.txt  ← C++字符串里<br>../../file.txt             ← 相对路径里<br></code></pre></td></tr></table></figure>
+<p>到底哪个是对的？为什么同一个路径要写成不同样子？</p>
+<ol start="2">
+<li>历史原因</li>
+</ol>
+<p>· Windows：从 DOS 时代继承，用反斜杠 \ 分隔文件夹<br />
+· Unix/Linux：用正斜杠 / 分隔<br />
+· Web：URL 里用正斜杠<br />
+<a href="https://example.com/">https://example.com/</a></p>
+<p>你现在 straddle 在三个世界之间，所以乱。</p>
+<hr />
+<p>二、各场景应该用什么</p>
+<p>场景1：文件资源管理器地址栏</p>
+<p>用反斜杠 \</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">C:\Users\34035\Graphics<br></code></pre></td></tr></table></figure>
+<p>这是 Windows 亲儿子，只能用 \。</p>
+<p>场景2：命令行（cmd/PowerShell）</p>
+<p>两种都行，但建议用反斜杠</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> C:\Users\34035\Graphics<br><span class="hljs-built_in">cd</span> C:/Users/34035/Graphics   <span class="hljs-comment"># 也行</span><br></code></pre></td></tr></table></figure>
+<p>cmd 和 PowerShell 都兼容正斜杠，但传统习惯用反斜杠。</p>
+<p>场景3：C/C++ 代码里的字符串</p>
+<p>必须用双反斜杠 \ 或正斜杠 /</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">// 错误：\U 被解释成 Unicode 转义</span><br><span class="hljs-type">const</span> <span class="hljs-type">char</span>* path = <span class="hljs-string">&quot;C:\Users\34035\file.txt&quot;</span>;<br><br><span class="hljs-comment">// 正确：双反斜杠</span><br><span class="hljs-type">const</span> <span class="hljs-type">char</span>* path = <span class="hljs-string">&quot;C:\\Users\\34035\\file.txt&quot;</span>;<br><br><span class="hljs-comment">// 正确：正斜杠（推荐）</span><br><span class="hljs-type">const</span> <span class="hljs-type">char</span>* path = <span class="hljs-string">&quot;C:/Users/34035/file.txt&quot;</span>;<br></code></pre></td></tr></table></figure>
+<p>为什么：C++ 里反斜杠 \ 是转义符的开始，比如 \n 是换行。所以要表示真正的反斜杠，得写两个 \。</p>
+<p>场景4：CMakeLists.txt 和 JSON 文件</p>
+<p>用正斜杠 /</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmake"><span class="hljs-keyword">set</span>(CMAKE_CXX_COMPILER <span class="hljs-string">&quot;C:/Toolkit/mingw64/bin/g++.exe&quot;</span>)<br></code></pre></td></tr></table></figure>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-attr">&quot;compilerPath&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;C:/Toolkit/mingw64/bin/g++.exe&quot;</span><br></code></pre></td></tr></table></figure>
+<p>这些文件里反斜杠容易出问题，用正斜杠最安全。</p>
+<p>场景5：相对路径</p>
+<p>用正斜杠 /</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-built_in">loadOBJ</span>(<span class="hljs-string">&quot;../../3D_ply/bunny.obj&quot;</span>, vertices, indices);<br></code></pre></td></tr></table></figure>
+<p>相对路径里的 … 是语法，分隔符用 / 更清晰，各平台都认。</p>
+<p>场景6：Windows API</p>
+<p>必须用双反斜杠 \</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-built_in">CreateFile</span>(<span class="hljs-string">L&quot;C:\\Users\\34035\\file.txt&quot;</span>, ...);<br></code></pre></td></tr></table></figure>
+<p>Windows 底层 API 要求反斜杠，但在 C++ 里要写成双的。</p>
+<hr />
+<h1 id="注册表"><a href="#注册表" class="headerlink" title="注册表"></a><a class="markdownIt-Anchor" href="#注册表"></a> 注册表</h1>
+<p>一、注册表是什么</p>
+<ol>
+<li>一句话定义</li>
+</ol>
+<p>Windows 的配置数据库——所有设置、选项、配置都藏在这里。</p>
+<ol start="2">
+<li>类比</li>
+</ol>
+<p>· 如果把电脑比作一个人，注册表就是他的大脑+记忆+习惯<br />
+· 系统启动时读它，装软件时写它，运行时随时查它<br />
+· 改错了，人就傻了</p>
+<ol start="3">
+<li>物理位置（知道就行，别去翻）</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">C:\Windows\System32\config\   ← 系统配置<br>C:\Users\你的用户名\NTUSER.DAT  ← 你的个人配置<br></code></pre></td></tr></table></figure>
+<hr />
+<p>二、为什么需要知道注册表</p>
+<ol>
+<li>软件卸载不干净</li>
+</ol>
+<p>· 现象：明明卸载了，重装时报“已安装”<br />
+· 原因：软件没了，但注册表里还留着它的信息<br />
+· 解决：去注册表里删对应键</p>
+<ol start="2">
+<li>开机启动项太多</li>
+</ol>
+<p>· 现象：电脑开机越来越慢<br />
+· 原因：很多软件把自己写进开机启动<br />
+· 解决：去注册表里删掉不想自启的</p>
+<ol start="3">
+<li>右键菜单太乱</li>
+</ol>
+<p>· 现象：装了一堆软件，右键菜单比命还长<br />
+· 原因：每个软件都往注册表里加自己的右键项<br />
+· 解决：去注册表里删掉不用的</p>
+<ol start="4">
+<li>文件关联错了</li>
+</ol>
+<p>· 现象：双击 .txt 文件，它用记事本打开，但你想用 VSCode<br />
+· 原因：注册表里记录了默认打开方式<br />
+· 解决：改注册表或右键“打开方式”</p>
+<ol start="5">
+<li>某些设置界面找不到</li>
+</ol>
+<p>· 现象：想改的东西在设置面板里没有<br />
+· 原因：微软藏起来了，但注册表里有开关<br />
+· 解决：去注册表里改（需要知道具体键值）</p>
+<hr />
+<p>三、注册表长什么样</p>
+<ol>
+<li>打开方式</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">regedit<br></code></pre></td></tr></table></figure>
+<p>（Win + R 输入 regedit 回车）</p>
+<ol start="2">
+<li>结构（树形，和文件管理器一样）</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">计算机<br>├── HKEY_CLASSES_ROOT (HKCR)<br>├── HKEY_CURRENT_USER (HKCU)<br>├── HKEY_LOCAL_MACHINE (HKLM)<br>├── HKEY_USERS (HKU)<br>└── HKEY_CURRENT_CONFIG (HKCC)<br></code></pre></td></tr></table></figure>
+<ol start="3">
+<li>五个根键的作用</li>
+</ol>
+<p>根键 缩写 存什么<br />
+HKEY_CLASSES_ROOT HKCR 文件类型、右键菜单、COM组件<br />
+HKEY_CURRENT_USER HKCU 当前用户的设置（主题、壁纸、软件配置）<br />
+HKEY_LOCAL_MACHINE HKLM 本机所有用户的设置（硬件、系统、全局软件）<br />
+HKEY_USERS HKU 所有用户的配置（一般不用管）<br />
+HKEY_CURRENT_CONFIG HKCC 当前硬件配置（一般不用管）</p>
+<ol start="4">
+<li>键和值</li>
+</ol>
+<p>· 键（Key）：左边那些文件夹，像 HKEY_CURRENT_USER\Software\Microsoft<br />
+· 值（Value）：右边那些，存具体数据<br />
+· 值类型：字符串、数字、二进制</p>
+<hr />
+<p>四、日常会碰到的几个位置</p>
+<ol>
+<li>开机启动项</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run<br>HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run<br></code></pre></td></tr></table></figure>
+<p>右边列出来的，就是开机会自动启动的程序。</p>
+<ol start="2">
+<li>右键菜单（文件）</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">HKEY_CLASSES_ROOT\*\shell<br>HKEY_CLASSES_ROOT\*\shellex<br></code></pre></td></tr></table></figure>
+<p>每个子键对应一个右键菜单项。</p>
+<ol start="3">
+<li>右键菜单（文件夹）</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">HKEY_CLASSES_ROOT\Directory\shell<br>HKEY_CLASSES_ROOT\Directory\shellex<br></code></pre></td></tr></table></figure>
+<ol start="4">
+<li>软件卸载信息</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall<br></code></pre></td></tr></table></figure>
+<p>控制面板的“卸载程序”列表，就是从这里读的。</p>
+<ol start="5">
+<li>环境变量（没错，PATH 也在这）</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment<br>HKEY_CURRENT_USER\Environment<br></code></pre></td></tr></table></figure>
+<hr />
+<p>五、操作注册表（必读：先备份！）</p>
+<ol>
+<li>导出备份（改之前一定要做）</li>
+</ol>
+<p>· 选中要改的键 → 文件 → 导出<br />
+· 存成 .reg 文件<br />
+· 万一改坏了，双击这个文件就能恢复</p>
+<ol start="2">
+<li>查找</li>
+</ol>
+<p>按 Ctrl+F，输入关键词。但自带的搜索很慢，推荐用 RegScanner（第三方工具）。</p>
+<ol start="3">
+<li>修改</li>
+</ol>
+<p>· 右键 → 新建 → 字符串值 / DWORD值 / 等<br />
+· 双击改数值</p>
+<ol start="4">
+<li>删除</li>
+</ol>
+<p>右键 → 删除（不可恢复，除非有备份）</p>
+<hr />
+<p>六、命令行操作（不用开窗口）</p>
+<p>查询</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">reg query <span class="hljs-string">&quot;HKCU\Software\Microsoft\Windows\CurrentVersion\Run&quot;</span><br></code></pre></td></tr></table></figure>
+<p>添加</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">reg add <span class="hljs-string">&quot;HKCU\Software\MyApp&quot;</span> /v Version /t REG_SZ /d <span class="hljs-string">&quot;1.0&quot;</span> /f<br></code></pre></td></tr></table></figure>
+<p>删除</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">reg delete <span class="hljs-string">&quot;HKCU\Software\MyApp&quot;</span> /f<br></code></pre></td></tr></table></figure>
+<p>导出/导入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">reg <span class="hljs-built_in">export</span> <span class="hljs-string">&quot;HKCU\Software\MyApp&quot;</span> backup.reg<br>reg import backup.reg<br></code></pre></td></tr></table></figure>
+<hr />
+<h1 id="网络"><a href="#网络" class="headerlink" title="网络"></a><a class="markdownIt-Anchor" href="#网络"></a> 网络</h1>
+<h2 id="windows网络机制"><a href="#windows网络机制" class="headerlink" title="windows网络机制"></a><a class="markdownIt-Anchor" href="#windows网络机制"></a> Windows网络机制</h2>
+<p>一、Windows 网络整体架构（五层模型）</p>
+<p>Windows 的网络实现大致分为五层，从应用程序到硬件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">层级               作用                        例子<br>应用层          你用的软件                浏览器、QQ、Steam<br>API层        应用程序调用网络的接口      Winsock (ws2_32.dll)<br>协议层         实现 TCP/IP 等协议            tcpip.sys<br>NDIS层        连接协议和网卡的“桥梁”    ndis.sys、Ndisuio、网卡驱动<br>硬件层            物理网卡               Realtek、MediaTek<br><br></code></pre></td></tr></table></figure>
+<hr />
+<p>二、核心概念逐个拆解</p>
+<ol>
+<li>网络适配器（网卡）</li>
+</ol>
+<p>就是你在设备管理器里看到的那些：</p>
+<p>· 有线网卡：Realtek PCIe GbE Family Controller<br />
+· 无线网卡：MediaTek Wi-Fi 6 MT7921</p>
+<p>每个网卡是一个硬件设备，有自己的驱动程序。</p>
+<ol start="2">
+<li>协议栈（TCP/IP）</li>
+</ol>
+<p>协议栈是网络的“规则集”。你的浏览器发一个请求，要经过层层封装：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">浏览器 → TCP（加端口） → IP（加地址） → 网卡 → 发出去<br></code></pre></td></tr></table></figure>
+<p>Windows 从 Windows 7/2008 R2 开始，原生支持 IPv4 和 IPv6 双协议栈并行运行。</p>
+<ol start="3">
+<li>Winsock（Windows套接字）</li>
+</ol>
+<p>这是应用程序和网络协议之间的“翻译官”：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">// 程序员写代码时调用的就是 Winsock</span><br>socket() → bind() → connect() → send() → recv()<br></code></pre></td></tr></table></figure>
+<p>Winsock 的好处是：应用程序不需要知道底层是 Wi-Fi 还是有线，只管调用接口。</p>
+<ol start="4">
+<li>TDI（传输驱动程序接口）</li>
+</ol>
+<p>TDI 是协议驱动向上层提供服务的标准接口。它规定了：</p>
+<p>· 网络请求怎么格式化成 IRP（I/O请求包）<br />
+· 网络地址怎么分配<br />
+· 通信连接怎么管理</p>
+<p>你电脑里的 tcpip.sys 就是一个 TDI 传输器。</p>
+<hr />
+<p>三、NDIS 层（核心中的核心）</p>
+<p>3.1 NDIS 是什么？</p>
+<p>NDIS（网络驱动程序接口规范）是微软和 3COM 在 1989 年联合开发的规范，目的是让协议驱动和网卡驱动能互相通信，而不需要知道对方的具体细节。</p>
+<p>3.2 NDIS 的三层驱动程序</p>
+<p>NDIS 定义了三种驱动，从上到下依次是：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">驱动类型 位置 作用 例子<br>协议驱动 最上层 实现具体协议 tcpip.sys<br>中间层驱动 中间 拦截、过滤、修改数据包 防火墙、VPN、NAT<br>微端口驱动 最下层 直接和网卡硬件通信 mt7921.sys（你的无线网卡驱动）<br></code></pre></td></tr></table></figure>
+<p>3.3 微端口驱动（网卡驱动）详解</p>
+<p>这是你设备管理器里看到的“网卡驱动”，也是 NDIS 三层中最底层、和硬件直接打交道的那一层。</p>
+<p>3.3.1 它做什么？</p>
+<p>以你的无线网卡为例，一篇关于无线网卡 NDIS 小端口驱动的论文里提到，驱动初始化时要做的几件事：</p>
+<ol>
+<li>选择媒体类型：无线网卡声明为 NdisMedium802_3（和以太网一样的数据格式）</li>
+<li>从注册表读取网卡地址</li>
+<li>注册适配器类型（比如 PCMCIA、PCIe）</li>
+<li>选择并注册 I/O 端口、中断</li>
+<li>初始化网卡硬件：设置寄存器、读取永久 MAC 地址</li>
+<li>初始化自定义变量</li>
+</ol>
+<p>收发数据时：</p>
+<p>· 发送：上层要发数据，NDIS 调用微端口驱动的 Send 函数，驱动把数据传给硬件发出去<br />
+· 接收：硬件收到数据产生中断，驱动把数据传给 NDIS，NDIS 再传给上层</p>
+<p>3.3.2 它和 NDIS 的关系</p>
+<p>NDIS 提供了一整套函数（NdisXxx），微端口驱动调用这些函数来和系统交互。反过来，微端口驱动也要实现一组 MiniportXxx 函数，供 NDIS 在特定事件（比如收到数据包）时调用。</p>
+<p>简单说：NDIS 是“规矩”，微端口驱动是“按规矩办事的那个人”。</p>
+<p>3.4 你改的那个 Ndisuio 是什么？</p>
+<p>Ndisuio 是 NDIS 提供的一个用户模式 I/O 协议驱动。它的作用是：</p>
+<p>允许用户模式程序（比如某些网络工具）直接和 NDIS 层交互，绕过上层的 Winsock 和 TDI。</p>
+<p>那个逆天软件把它从自动（2）改成手动（3），导致系统启动时 NDIS 层没有完全加载，上层协议和下层硬件之间就“断联”了。这就是为什么你改回来之后，网络系统恢复正常。</p>
+<hr />
+<p>四、数据从应用到网卡的完整旅程</p>
+<p>以你打开浏览器访问百度为例：</p>
+<p>步骤 经过的组件 做什么<br />
+1 浏览器 调用 Winsock API<br />
+2 Winsock (ws2_32.dll) 格式化请求，传给协议驱动<br />
+3 TDI 传输器 (tcpip.sys) 加上 TCP 头、IP 头<br />
+4 NDIS 库 (ndis.sys) 把数据传给微端口驱动<br />
+5 微端口驱动 控制网卡硬件发出去<br />
+6 网卡硬件 转成电信号/无线电发出去</p>
+<p>接收数据时，流程相反。</p>
+<hr />
+<p>五、几个关键机制</p>
+<p>5.1 网络位置（Network Location）</p>
+<p>从 Windows 7/2008 R2 开始，系统引入了“网络位置”概念：</p>
+<p>· 专用网络：信任的网络（家、公司），允许文件共享<br />
+· 公用网络：不信任的网络（咖啡厅、机场），防火墙更严格<br />
+· 域网络：加入企业域时自动识别</p>
+<p>系统通过 “网络列表服务” 识别每个网络，并分配防火墙规则。</p>
+<p>5.2 自动跃点（Automatic Metric）</p>
+<p>Windows 会根据网卡速度自动计算“跃点数”（优先级）：</p>
+<p>· 速度越快 → 跃点数越低 → 优先级越高<br />
+· 以太网（1000Mbps）优先级高于 Wi-Fi（几百Mbps）</p>
+<p>这就是为什么同时连有线和无线时，系统默认走以太网。</p>
+<p>5.3 APIPA（自动专用IP寻址）</p>
+<p>当电脑向 DHCP 服务器要 IP 但没要到时，会自动给自己分配一个 169.254.x.x 的地址。这个地址只能和同一子网的其他设备通信，不能上网。</p>
+<p>你之前看到 Wi-Fi 的 IPv4 地址是 169.254.150.229，就是这个原因。</p>
+<p>5.4 硬件抽象层（HAL）</p>
+<p>HAL 是 Windows 最底层的模块，把所有和硬件相关的代码隔离在这里。这样上层的驱动就不用管你是 Intel 网卡还是 Realtek 网卡，反正通过 HAL 调用就行。</p>
+<hr />
+<h2 id="故障排查"><a href="#故障排查" class="headerlink" title="故障排查"></a><a class="markdownIt-Anchor" href="#故障排查"></a> 故障排查</h2>
+<h3 id="问题一"><a href="#问题一" class="headerlink" title="问题一"></a><a class="markdownIt-Anchor" href="#问题一"></a> 问题一：</h3>
+<p>一、问题现象</p>
+<p>· 以太网：插网线能正常上网<br />
+· Wi-Fi：能连接上（图标亮），但无法上网，浏览器打不开任何网页</p>
+<p>运行 ipconfig 后看到：</p>
+<p>· Wi-Fi 的 IPv4 地址是 169.254.x.x<br />
+· 以太网的 IPv4 地址是正常的 192.168.x.x</p>
+<hr />
+<p>二、先看懂关键线索：169.254.x.x 是什么意思？</p>
+<p>这个地址叫 APIPA 地址（自动专用IP寻址）。</p>
+<p>地址类型 来源 能不能上网<br />
+192.168.x.x 路由器 DHCP 分配的 能<br />
+169.254.x.x 电脑自己临时分配的 不能</p>
+<p>出现条件：电脑向路由器要 IP（DHCP 请求），但没要到。</p>
+<p>看到这个地址，就能直接定位问题：<br />
+Wi-Fi 硬件是好的（所以能给自己分配地址）<br />
+DHCP 请求失败（所以没拿到路由器的地址）</p>
+<hr />
+<p>三、为什么以太网能拿到 IP，Wi-Fi 拿不到？</p>
+<p>3.1 两个网卡共用同一套“上层系统”</p>
+<p>以太网和 Wi-Fi 虽然硬件独立，但共享以下组件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">TCP/IP协议栈 <br>DHCP 客户端 <br>NDIS 层 <br></code></pre></td></tr></table></figure>
+<p>所以当以太网能正常上网时，说明：</p>
+<p>· TCP/IP 协议栈是好的<br />
+· DHCP 客户端服务是好的<br />
+· NDIS 层整体能工作</p>
+<p>四、解决方法：禁用再启用以太网</p>
+<ol>
+<li>Win + R → ncpa.cpl</li>
+<li>右键以太网 → 禁用</li>
+<li>等 10 秒 → 右键以太网 → 启用</li>
+</ol>
+<p>结果：Wi-Fi 突然能拿到正常 IP 了！</p>
+<hr />
+<p>五、为什么禁用再启用以太网能救 Wi-Fi？</p>
+<p>这背后有两个机制：</p>
+<p>5.1 协议栈共享</p>
+<p>以太网和 Wi-Fi 共用同一套：</p>
+<p>· TCP/IP 协议栈<br />
+· DHCP 客户端<br />
+· NDIS 层</p>
+<p>5.2 系统检测到网络变化会重启协议栈</p>
+<p>当你禁用以太网时，系统检测到大网络变化，强制重启了整个协议栈和 NDIS 层——顺带把 Wi-Fi 的 DHCP 路径也救活了。</p>
+<hr />
+<h3 id="问题二-网络图标消失"><a href="#问题二-网络图标消失" class="headerlink" title="问题二-网络图标消失"></a><a class="markdownIt-Anchor" href="#问题二-网络图标消失"></a> 问题二、网络图标消失</h3>
+<h4 id="可能性一-静电"><a href="#可能性一-静电" class="headerlink" title="可能性一-静电"></a><a class="markdownIt-Anchor" href="#可能性一-静电"></a> 可能性一、静电</h4>
+<hr />
+<p>一、为什么静电会导致图标消失？</p>
+<p>笔记本内部积累的静电可能导致主板上的网卡硬件处于“假死”状态。长按电源键（关机状态下）可以释放主板残余电荷，让硬件复位。</p>
+<p>很多品牌（联想、戴尔、惠普）的官网技术支持里都有这个步骤，叫 “强制放电” 或 “硬件复位”。</p>
+<hr />
+<p>二、操作方法</p>
+<p>标准步骤</p>
+<ol>
+<li>关机（不是休眠，不是重启，是彻底关机）</li>
+<li>拔掉电源适配器（电源线彻底拔掉）</li>
+<li>拔掉所有外接设备（鼠标、U盘、外接显示器等）</li>
+<li>长按电源键 20-30 秒（不要松手）<br />
+· 过程中电脑不会有任何反应（本来就是关机的）<br />
+· 这是正常的，它在释放主板残余电荷</li>
+<li>松开电源键，插上电源</li>
+<li>正常开机</li>
+</ol>
+<hr />
+<p>三、为什么这个方法有用？</p>
+<p>笔记本在长时间使用、插拔外设、环境干燥等情况下，主板上可能积累静电。这些静电不会损坏硬件，但可能导致某些芯片（比如网卡）进入“保护状态”或“假死”。</p>
+<p>长按电源键（关机状态下）会强制主板放电，把所有残余电荷清空，硬件就能恢复正常状态。</p>
+<hr />
+<h4 id="可能性二-服务没启动"><a href="#可能性二-服务没启动" class="headerlink" title="可能性二-服务没启动"></a><a class="markdownIt-Anchor" href="#可能性二-服务没启动"></a> 可能性二、服务没启动</h4>
+<hr />
+<p>一、核心服务：WLAN AutoConfig</p>
+<p>Windows 的无线网络功能由一个关键服务控制：WLAN AutoConfig（无线网络自动配置服务）。</p>
+<p>如果这个服务没启动，后果包括：</p>
+<p>· Wi-Fi 图标消失<br />
+· 无法扫描 Wi-Fi 网络<br />
+· 无法连接 Wi-Fi</p>
+<hr />
+<p>二、怎么检查和启动</p>
+<p>步骤 1：打开服务管理器</p>
+<p>Win + R → 输入 services.msc → 回车</p>
+<p>步骤 2：找到 WLAN AutoConfig</p>
+<p>在列表里按 W 键快速定位，找到 WLAN AutoConfig。</p>
+<p>步骤 3：检查状态</p>
+<p>双击打开，看两个地方：</p>
+<p>检查项 正确状态 如果不对怎么办<br />
+启动类型 自动 改成“自动”，点应用<br />
+服务状态 正在运行 点“启动”</p>
+<p>步骤 4：如果启动失败</p>
+<p>点“启动”时报错，可能是：</p>
+<p>· 依赖服务没启动（Ndisuio、RpcSs 等）<br />
+· 注册表被改过</p>
+<hr />
+<p>四、如果 WLAN AutoConfig 正常，但图标还没回来</p>
+<p>再检查一个相关的服务：Network Location Awareness</p>
+<p>这个服务负责识别网络类型（专用/公用），有时也会影响图标显示。</p>
+<p>同样在服务列表里找到 Network Location Awareness（或 NlaSvc）：</p>
+<p>· 启动类型：自动<br />
+· 服务状态：正在运行</p>
+<hr />
+<h4 id="可能性三-驱动异常"><a href="#可能性三-驱动异常" class="headerlink" title="可能性三-驱动异常"></a><a class="markdownIt-Anchor" href="#可能性三-驱动异常"></a> 可能性三、驱动异常</h4>
+<hr />
+<p>一、什么时候该试这个方法？</p>
+<p>· 已经试过静电释放、服务检查，都没用<br />
+· 图标消失，Wi-Fi 完全搜不到<br />
+· 设备管理器里能看到问题</p>
+<hr />
+<p>二、驱动异常的几种表现</p>
+<p>打开设备管理器（Win + X → 设备管理器），展开 “网络适配器”，找你的无线网卡（MediaTek/Realtek/Intel）：</p>
+<p>表现 含义 怎么办<br />
+有向下箭头 网卡被禁用了 右键 → 启用设备<br />
+黄色感叹号 驱动故障 右键 → 更新驱动 / 卸载重装<br />
+根本找不到 硬件没被识别 扫描硬件改动 / 重装主板驱动<br />
+名字是“以太网控制器” 驱动没装上 去官网下驱动手动装</p>
+<hr />
+<p>三、具体操作</p>
+<p>3.1 如果网卡被禁用</p>
+<p>右键 → “启用设备”<br />
+等几秒，右下角图标可能就回来了。</p>
+<p>3.2 如果驱动有黄色感叹号</p>
+<p>方法一：更新驱动</p>
+<ol>
+<li>右键 → “更新驱动程序”</li>
+<li>选 “自动搜索驱动程序”</li>
+<li>等它搜完，如果找到就装上</li>
+</ol>
+<p>方法二：卸载重装（更彻底）</p>
+<ol>
+<li>右键 → “卸载设备”</li>
+<li>勾选“删除此设备的驱动程序软件”</li>
+<li>确定，重启电脑</li>
+<li>重启后 Windows 会自动重装驱动</li>
+</ol>
+<p>3.3 如果网卡完全找不到</p>
+<ol>
+<li>在设备管理器顶部点 “操作” → “扫描检测硬件改动”</li>
+<li>等它扫完，看看网卡会不会出现</li>
+<li>如果还是找不到，可能是：<br />
+· BIOS 里被禁用了<br />
+· 硬件故障<br />
+· 主板驱动没装全</li>
+</ol>
+<hr />
+<p>四、BIOS 里看一眼（进阶）</p>
+<p>有些软件会改 BIOS 设置，导致网卡被硬件级禁用：</p>
+<ol>
+<li>重启电脑，开机时按 F2 或 Del 进 BIOS</li>
+<li>找 “Onboard LAN”、“Wireless LAN” 或 “WLAN Device”</li>
+<li>确保是 Enabled（开启状态）</li>
+<li>保存退出重启</li>
+</ol>
+<hr />
+<h4 id="可能性四-注册表被改"><a href="#可能性四-注册表被改" class="headerlink" title="可能性四-注册表被改"></a><a class="markdownIt-Anchor" href="#可能性四-注册表被改"></a> 可能性四、注册表被改</h4>
+<hr />
+<p>一、什么时候该试这个方法？</p>
+<p>· 已经试过静电释放、服务检查、驱动重装，都没用<br />
+· 图标消失，Wi-Fi 功能异常<br />
+· 你怀疑之前装的某个软件改了系统底层</p>
+<hr />
+<p>二、为什么注册表会影响网络图标？</p>
+<p>网络图标不是单纯的一个“开关”，它依赖底层服务的正常运行。如果某个关键服务的注册表配置被改，服务启动失败，图标就会消失。</p>
+<p>最常见被改的地方有两个：</p>
+<p>注册表路径 作用 被改后的后果<br />
+Services\Ndisuio NDIS 用户态协议驱动 网络协议栈加载不全<br />
+Services\Wcmsvc 连接管理器 网络连接状态无法识别</p>
+<p>你之前遇到的就是第一种。</p>
+<hr />
+<p>三、检查位置一：Ndisuio</p>
+<p>路径</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">计算机\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Ndisuio<br></code></pre></td></tr></table></figure>
+<p>检查项</p>
+<p>键值名 正常值 被改后的值 含义<br />
+Start 2 3 或 4 2=自动，3=手动，4=禁用</p>
+<p>操作方法</p>
+<ol>
+<li>Win + R → regedit → 回车</li>
+<li>粘贴路径到地址栏，回车</li>
+<li>找到 Start，双击</li>
+<li>如果不是 2，改成 2，点确定</li>
+<li>重启电脑</li>
+</ol>
+<hr />
+<p>四、检查位置二：Wcmsvc</p>
+<p>这个服务负责管理网络连接状态，如果它的依赖项被改，也可能导致图标消失。</p>
+<p>路径</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">计算机\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Wcmsvc<br></code></pre></td></tr></table></figure>
+<p>检查项</p>
+<p>键值名 正常值 被改后的后果<br />
+DependOnService 只有 RPCSS 等核心依赖 如果多了 WinHttpAutoProxySvc，可能导致启动失败</p>
+<p>操作方法</p>
+<ol>
+<li>进到 Wcmsvc 路径</li>
+<li>找到 DependOnService，双击</li>
+<li>检查列表里有没有 WinHttpAutoProxySvc</li>
+<li>如果有，选中它按 Delete 删掉（不要删别的）</li>
+<li>确定，重启电脑</li>
+</ol>
+<hr />
+<p>五、一点提醒</p>
+<p>改注册表之前，最好先备份一下：</p>
+<p>· 右键要改的项 → 导出<br />
+· 存个 .reg 文件，万一改错了能恢复</p>
+<hr />
+<h1 id="windows-系统配置与安全策略"><a href="#windows-系统配置与安全策略" class="headerlink" title="windows-系统配置与安全策略"></a><a class="markdownIt-Anchor" href="#windows-系统配置与安全策略"></a> Windows 系统配置与安全策略”</h1>
+<hr />
+<p>问题现象</p>
+<p>在 PowerShell 里运行 hexo 命令时，出现以下报错：</p>
+<p>无法加载文件 …hexo.ps1，因为在此系统上禁止运行脚本。</p>
+<p>问题原因</p>
+<p>这是 Windows 的 执行策略（Execution Policy） 在起作用。它就像系统的一个安全开关，为了防止恶意脚本运行，默认禁止所有从网上下载的脚本文件（比如 hexo.ps1）直接执行。</p>
+<p>解决方法</p>
+<p>步骤一：以管理员身份打开 PowerShell</p>
+<p>· 点击“开始”，搜索 “PowerShell”。<br />
+· 右键点击 “Windows PowerShell”，选择 “以管理员身份运行”。</p>
+<p>步骤二：修改执行策略<br />
+在管理员 PowerShell 窗口中，输入以下命令并回车：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-built_in">Set-ExecutionPolicy</span> <span class="hljs-literal">-ExecutionPolicy</span> RemoteSigned <span class="hljs-literal">-Scope</span> CurrentUser<br></code></pre></td></tr></table></figure>
+<p>· 参数解释：<br />
+· RemoteSigned：允许运行本地脚本；对于从网上下载的脚本，要求必须有可信发布者的数字签名才可运行。这对我们日常使用（如运行 Hexo）来说是足够安全且方便的。<br />
+· Scope CurrentUser：这个更改仅对当前用户生效，不会影响电脑上的其他账户，更安全。</p>
+<p>步骤三：验证<br />
+关掉管理员窗口，重新打开一个普通 PowerShell 窗口，再次运行 hexo 命令，应该就能正常工作了。</p>
+<p>一点小补充</p>
+<p>如果不想开管理员权限，也可以针对当前会话临时放行：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-built_in">Set-ExecutionPolicy</span> <span class="hljs-literal">-ExecutionPolicy</span> RemoteSigned <span class="hljs-literal">-Scope</span> <span class="hljs-keyword">Process</span><br></code></pre></td></tr></table></figure>
+<p>但这个设置只在当前窗口有效，关掉就没了，每次都要重新设置，比较麻烦。推荐使用上面的永久方案。</p>
+<hr />
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2026/03/10/%E7%BC%96%E8%BE%91%E5%99%A8%E9%85%8D%E7%BD%AE/">← Next 编辑器配置</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2026/03/02/%E9%AB%98%E7%AD%89%E4%BB%A3%E6%95%B0%E7%AC%94%E8%AE%B0/">高等代数笔记 Prev →</a></div></div></div><details id="reward"><summary>reward</summary><div><span>微信 | Wechat</span><br><img src="/images/WeChat.png"></div><div><span>支付宝 | Alipay</span><br><img src="/images/Alipay.png"></div></details><div id="comments"><div id="giscus"></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="To Top" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" onClick="tocControl.change()" title="To Catalog"><span class="tocBtnIconBar"></span><span class="tocBtnIconBar"></span><span class="tocBtnIconBar"></span></a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="Change Theme"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="/images/1.jpg" alt="Logo" style="margin:0;border-radius:0;"></a><h1 id="Dr"><a href="/">Lnk</a></h1><div id="description"><p></p></div><div id="social-links"><a class="social" target="_blank" rel="noopener" href="https://github.com/Lnkqwq"><i class="fab fa-github" alt="GitHub"></i></a><a class="social" href="3403583728@qq.com"><i class="fa fa-envelope" alt="E-Mail"></i></a></div></div><div id="aside-block"><div id="toc-div"><h1>Catalog</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8Fpath"><span class="toc-number">1.</span> <span class="toc-text"> 环境变量(path)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#windows-%E9%87%8C%E7%9A%84%E6%96%9C%E6%9D%A0"><span class="toc-number">2.</span> <span class="toc-text"> Windows 里的斜杠</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B3%A8%E5%86%8C%E8%A1%A8"><span class="toc-number">3.</span> <span class="toc-text"> 注册表</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C"><span class="toc-number">4.</span> <span class="toc-text"> 网络</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#windows%E7%BD%91%E7%BB%9C%E6%9C%BA%E5%88%B6"><span class="toc-number">4.1.</span> <span class="toc-text"> Windows网络机制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%85%E9%9A%9C%E6%8E%92%E6%9F%A5"><span class="toc-number">4.2.</span> <span class="toc-text"> 故障排查</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E4%B8%80"><span class="toc-number">4.2.1.</span> <span class="toc-text"> 问题一：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E4%BA%8C-%E7%BD%91%E7%BB%9C%E5%9B%BE%E6%A0%87%E6%B6%88%E5%A4%B1"><span class="toc-number">4.2.2.</span> <span class="toc-text"> 问题二、网络图标消失</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%AF%E8%83%BD%E6%80%A7%E4%B8%80-%E9%9D%99%E7%94%B5"><span class="toc-number">4.2.2.1.</span> <span class="toc-text"> 可能性一、静电</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%AF%E8%83%BD%E6%80%A7%E4%BA%8C-%E6%9C%8D%E5%8A%A1%E6%B2%A1%E5%90%AF%E5%8A%A8"><span class="toc-number">4.2.2.2.</span> <span class="toc-text"> 可能性二、服务没启动</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%AF%E8%83%BD%E6%80%A7%E4%B8%89-%E9%A9%B1%E5%8A%A8%E5%BC%82%E5%B8%B8"><span class="toc-number">4.2.2.3.</span> <span class="toc-text"> 可能性三、驱动异常</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%AF%E8%83%BD%E6%80%A7%E5%9B%9B-%E6%B3%A8%E5%86%8C%E8%A1%A8%E8%A2%AB%E6%94%B9"><span class="toc-number">4.2.2.4.</span> <span class="toc-text"> 可能性四、注册表被改</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#windows-%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE%E4%B8%8E%E5%AE%89%E5%85%A8%E7%AD%96%E7%95%A5"><span class="toc-number">5.</span> <span class="toc-text"> Windows 系统配置与安全策略”</span></a></li></ol></div></div><footer><nobr>Published with <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> Theme <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> by <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas></body></html>
