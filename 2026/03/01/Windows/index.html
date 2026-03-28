@@ -32,24 +32,7 @@ function updatePageConfig() {
   }
 }
 document.addEventListener('pjax:complete', function() { updatePageConfig(); });
-updatePageConfig();</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><script src="//unpkg.com/mermaid@11.12.2/dist/mermaid.min.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.1/MathJax.js"></script><script>MathJax.Hub.Config({
- menuSettings: {
-   zoom: "None"
- },
- showMathMenu: false,
- jax: ["input/TeX","output/CommonHTML"],
- extensions: ["tex2jax.js"],
- TeX: {
-   extensions: ["AMSmath.js","AMSsymbols.js"],
-   equationNumbers: {
-     autoNumber: "AMS"
-   }
- },
- tex2jax: {
-   inlineMath: [["\\(", "\\)"]],
-   displayMath: [["\\[", "\\]"]]
- }
-});</script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
+updatePageConfig();</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><script src="//unpkg.com/mermaid@11.12.2/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
  document.documentElement.setAttribute('theme-mode', 'light')
 if (window.localStorage.getItem('theme-mode') === 'dark')
  document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
@@ -66,24 +49,6 @@ if (window.localStorage.getItem('theme-mode') === 'dark')
 }</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@11.12.2/dist/mermaid.esm.min.mjs';
 window.mermaid = mermaid;
 code.paintMermaid();
-</script><script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.1/MathJax.js"></script><script>MathJax.Hub.Config({
-  menuSettings: {
-    zoom: "None"
-  },
-  showMathMenu: false,
-  jax: ["input/TeX","output/CommonHTML"],
-  extensions: ["tex2jax.js"],
-  TeX: {
-    extensions: ["AMSmath.js","AMSsymbols.js"],
-    equationNumbers: {
-      autoNumber: "AMS"
-    }
-  },
-  tex2jax: {
-    inlineMath: [["\\(", "\\)"]],
-    displayMath: [["\\[", "\\]"]]
-  }
-});
 </script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
 lightGallery(document.getElementById('post-bg'), {
   plugins: [lgZoom,lgThumbnail],
@@ -111,7 +76,7 @@ document.addEventListener("pjax:complete", reset);reset()})</script><script clas
  emitMetadata: '0',
  inputPosition: 'bottom',
  lang: 'zh-CN',
- crossorigin: 'anonymous' , loading: 'lazy'};window.giscusThemeConfig = { theme: 'preferred_color_scheme' };MathJax.Hub.Queue(["Typeset", MathJax.Hub]);document.querySelector('.lg-container')?.remove()
+ crossorigin: 'anonymous' , loading: 'lazy'};window.giscusThemeConfig = { theme: 'preferred_color_scheme' };document.querySelector('.lg-container')?.remove()
 const postBg = document.querySelector('#post-bg');
 if (postBg) lightGallery(postBg, {
   plugins: [lgZoom,lgThumbnail],
@@ -128,7 +93,7 @@ if (postBg) lightGallery(postBg, {
    }
  }
 });
-document.addEventListener("pjax:complete", reset);reset()})</script><!-- hexo injector head_end start -->
+document.addEventListener("pjax:complete", reset);reset()})</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/[email protected]/dist/katex.min.css"><!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
@@ -397,4 +362,4 @@ HKEY_CURRENT_CONFIG HKCC 当前硬件配置（一般不用管）</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-built_in">Set-ExecutionPolicy</span> <span class="hljs-literal">-ExecutionPolicy</span> RemoteSigned <span class="hljs-literal">-Scope</span> <span class="hljs-keyword">Process</span><br></code></pre></td></tr></table></figure>
 <p>但这个设置只在当前窗口有效，关掉就没了，每次都要重新设置，比较麻烦。推荐使用上面的永久方案。</p>
 <hr />
-<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2026/03/02/%E7%BC%96%E8%BE%91%E5%99%A8%E9%85%8D%E7%BD%AE/">← Next 编辑器配置</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2026/02/06/%E5%9B%BE%E5%BD%A2%E5%AD%A6%E7%BC%96%E7%A8%8B/">图形学编程 Prev →</a></div></div></div><details id="reward"><summary>reward</summary><div><span>微信 | Wechat</span><br><img src="/images/WeChat.png"></div><div><span>支付宝 | Alipay</span><br><img src="/images/Alipay.png"></div></details><div id="comments"><div id="giscus"></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="To Top" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" onClick="tocControl.change()" title="To Catalog"><span class="tocBtnIconBar"></span><span class="tocBtnIconBar"></span><span class="tocBtnIconBar"></span></a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="Change Theme"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="/images/1.jpg" alt="Logo" style="margin:0;border-radius:0;"></a><h1 id="Dr"><a href="/">Lnk</a></h1><div id="description"><p></p></div><div id="social-links"><a class="social" target="_blank" rel="noopener" href="https://github.com/Lnkqwq"><i class="fab fa-github" alt="GitHub"></i></a><a class="social" href="mailto:3403583728@qq.com"><i class="fa-solid fa-envelope" alt="E-Mail"></i></a></div></div><div id="aside-block"><div id="toc-div"><h1>Catalog</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8Fpath"><span class="toc-number">1.</span> <span class="toc-text"> 环境变量(path)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#windows-%E9%87%8C%E7%9A%84%E6%96%9C%E6%9D%A0"><span class="toc-number">2.</span> <span class="toc-text"> Windows 里的斜杠</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B3%A8%E5%86%8C%E8%A1%A8"><span class="toc-number">3.</span> <span class="toc-text"> 注册表</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#windows-%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE%E4%B8%8E%E5%AE%89%E5%85%A8%E7%AD%96%E7%95%A5"><span class="toc-number">4.</span> <span class="toc-text"> Windows 系统配置与安全策略”</span></a></li></ol></div></div><footer><nobr>Published with <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> Theme <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> by <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas></body></html>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2026/03/02/%E7%BC%96%E8%BE%91%E5%99%A8%E9%85%8D%E7%BD%AE/">← Next 编辑器配置</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2026/02/06/%E5%9B%BE%E5%BD%A2%E5%AD%A6%E7%BC%96%E7%A8%8B/">图形学编程 Prev →</a></div></div></div><details id="reward"><summary>reward</summary><div><span>微信 | Wechat</span><br><img src="/images/WeChat.png"></div><div><span>支付宝 | Alipay</span><br><img src="/images/Alipay.png"></div></details><div id="comments"><div id="giscus"></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="To Top" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" onClick="tocControl.change()" title="To Catalog"><span class="tocBtnIconBar"></span><span class="tocBtnIconBar"></span><span class="tocBtnIconBar"></span></a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="Change Theme"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="/images/1.jpg" alt="Logo" style="margin:0;border-radius:0;"></a><h1 id="Dr"><a href="/">Lnk</a></h1><div id="description"><p></p></div><div id="social-links"><a class="social" target="_blank" rel="noopener" href="https://github.com/Lnkqwq"><i class="fab fa-github" alt="GitHub"></i></a><a class="social" href="mailto:3403583728@qq.com"><i class="fa-solid fa-envelope" alt="E-Mail"></i></a></div></div><div id="aside-block"><div id="toc-div"><h1>Catalog</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8Fpath"><span class="toc-number">1.</span> <span class="toc-text"> 环境变量(path)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#windows-%E9%87%8C%E7%9A%84%E6%96%9C%E6%9D%A0"><span class="toc-number">2.</span> <span class="toc-text"> Windows 里的斜杠</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B3%A8%E5%86%8C%E8%A1%A8"><span class="toc-number">3.</span> <span class="toc-text"> 注册表</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#windows-%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE%E4%B8%8E%E5%AE%89%E5%85%A8%E7%AD%96%E7%95%A5"><span class="toc-number">4.</span> <span class="toc-text"> Windows 系统配置与安全策略”</span></a></li></ol></div></div><footer><nobr>Published with <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> Theme <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> by <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main></body></html>
